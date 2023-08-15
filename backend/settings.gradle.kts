@@ -10,3 +10,4 @@ plugins {
 }
 
 rootProject.name = "backend"
+include("stream")

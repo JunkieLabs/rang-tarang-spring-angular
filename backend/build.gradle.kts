@@ -24,6 +24,20 @@ repositories {
     mavenCentral()
 }
 
+subprojects {
+//    apply(plugin = "java")
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+
+    apply(plugin = "org.springframework.boot")
+
+    dependencies {
+        implementation(kotlin("stdlib"))
+
+        implementation("org.springframework.boot:spring-boot-starter-web")
+        // Other shared dependencies
+    }
+}
+
 dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-web")
