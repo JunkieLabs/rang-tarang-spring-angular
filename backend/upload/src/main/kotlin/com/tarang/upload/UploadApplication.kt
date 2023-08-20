@@ -1,13 +1,13 @@
-package com.tarang.stream
+package com.tarang.upload
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 //@ConfigurationPropertiesScan
 @SpringBootApplication
-class StreamApplication
+class UploadApplication
 
 fun main(args: Array<String>) {
-    println("Steam")
-    runApplication<StreamApplication>(*args)
+    println("Upload")
+    runApplication<UploadApplication>(*args)
 }

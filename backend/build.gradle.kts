@@ -24,17 +24,35 @@ repositories {
     mavenCentral()
 }
 
-subprojects {
-//    apply(plugin = "java")
-    apply(plugin = "org.jetbrains.kotlin.jvm")
 
-    apply(plugin = "org.springframework.boot")
+
+subprojects {
+
+
+    group = "com.tarang"
+    version = "1.0-SNAPSHOT"
+//    apply(plugin = "java")
+//    apply(plugin = "org.jetbrains.kotlin.jvm")
+
+//    apply(plugin = "org.springframework.boot")
+
+    apply {
+        plugin("io.spring.dependency-management")
+        plugin("org.springframework.boot")
+        plugin("org.jetbrains.kotlin.jvm")
+        plugin("org.jetbrains.kotlin.plugin.spring")
+//        plugin("com.google.cloud.tools.jib")
+    }
 
     dependencies {
         implementation(kotlin("stdlib"))
 
         implementation("org.springframework.boot:spring-boot-starter-web")
         // Other shared dependencies
+    }
+
+    repositories {
+        mavenCentral()
     }
 }
 
@@ -62,6 +80,9 @@ tasks.withType<KotlinCompile> {
 tasks.withType<JavaCompile> {
     options.compilerArgs.plusAssign("-jvm-target=17")
 }
+
+
+
 
 //kotlin {
 //    jvmToolchain(17)
