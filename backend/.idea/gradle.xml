@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/stream" />
+            <option value="$PROJECT_DIR$/upload" />
           </set>
         </option>
       </GradleProjectSettings>

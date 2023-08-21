@@ -40,3 +40,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+application.properties
+application-dev.properties
+application-prod.properties
