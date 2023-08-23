@@ -22,6 +22,7 @@ dependencies {
 
     // Apache Mina SSHD for FTPS
     implementation("org.apache.sshd:sshd-core:2.10.0") // Check for the latest version
+    implementation("org.springframework.integration:spring-integration-ftp")
 
     // Add Apache FtpServer dependency
 

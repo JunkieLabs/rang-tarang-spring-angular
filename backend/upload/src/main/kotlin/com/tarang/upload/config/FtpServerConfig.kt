@@ -5,16 +5,15 @@ import org.apache.ftpserver.FtpServer
 import org.apache.ftpserver.FtpServerFactory
 import org.apache.ftpserver.listener.ListenerFactory
 import org.apache.ftpserver.usermanager.impl.BaseUser
-import org.apache.ftpserver.usermanager.impl.PropertiesUserManager
 import org.apache.ftpserver.usermanager.impl.WritePermission
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import java.io.File
 
 
-@Configuration
+// @Configuration
 class FtpServerConfig {
-    @Bean(initMethod = "start", destroyMethod = "stop")
+//    @Bean(initMethod = "start", destroyMethod = "stop")
     fun ftpServer(): FtpServer {
         val serverFactory = FtpServerFactory()
 
@@ -27,13 +26,15 @@ class FtpServerConfig {
         serverFactory.addListener("ftp", factory.createListener())
 
         // Add user
-println("ftp server")
+        println("ftp server")
         // Add user
         val user = BaseUser()
-        user.name = "user"
+        user.name = "myuser"
         user.password = "1234"
         user.homeDirectory = "/ftp/root" // Set the FTP root directory
         user.authorities = listOf(WritePermission())
+        user.maxIdleTime =0
+
 
 
         val userManager = CustomUserManager()
